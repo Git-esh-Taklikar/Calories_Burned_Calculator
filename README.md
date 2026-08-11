@@ -1,6 +1,7 @@
 # Calories_Burned_Calculator
 Project Structure:
 
+```text
 .
 ├── data/
 │   ├── exercise.csv          # Exercise metrics (Duration, Heart Rate, Body Temp, etc.)
@@ -9,9 +10,8 @@ Project Structure:
 ├── main.py                   # Data preprocessing, training, evaluation, & plotting pipeline
 ├── requirements.txt          # Environment dependencies
 └── results.png               # Generated diagnostic dashboard
-
 How It Works (Algorithm Details)
-## ⚙️ How It Works (Algorithm Details)
+##  How It Works (Algorithm Details)
 
 The custom `LinearRegression` engine implements multi-variable Linear Regression using vectorization and Gradient Descent from scratch with NumPy.
 
