@@ -9,9 +9,8 @@ from linear_regression import LinearRegression
 from sklearn.linear_model import LinearRegression as SklearnLR
 from sklearn.metrics import mean_squared_error, r2_score
 
-# ============================================================
 # STEP 1: LOAD & CLEAN DATA
-# ============================================================
+
 exercise_df = pd.read_csv("data/exercise.csv")
 calories_df = pd.read_csv("data/calories.csv")
 
@@ -32,9 +31,8 @@ print("\n=== CORRELATIONS WITH CALORIES ===")
 print(df.corr()["Calories"].sort_values(ascending=False))
 
 
-# ============================================================
 # STEP 2: PREPARE DATA (The missing piece!)
-# ============================================================
+
 # Extract raw matrix values for our top 3 features, and target vector y
 X = df[["Duration", "Heart_Rate", "Body_Temp"]].values
 y = df["Calories"].values
@@ -59,9 +57,9 @@ print(f"\nTrain shape: {X_train.shape[0]} samples")
 print(f"Test shape:  {X_test.shape[0]} samples")
 
 
-# ============================================================
+
 # STEP 3: TRAIN YOUR FROM-SCRATCH MODEL
-# ============================================================
+
 print("\n" + "=" * 50)
 print("FROM-SCRATCH LINEAR REGRESSION")
 print("=" * 50)
@@ -86,9 +84,9 @@ print(f"Weights: {model.weights}")
 print(f"Bias: {model.bias:.4f}")
 
 
-# ============================================================
+
 # STEP 4: SKLEARN COMPARISON
-# ============================================================
+
 print("\n" + "=" * 50)
 print("SKLEARN LINEAR REGRESSION")
 print("=" * 50)
@@ -108,9 +106,9 @@ print(f"Weights: {sklearn_model.coef_}")
 print(f"Bias: {sklearn_model.intercept_:.4f}")
 
 
-# ============================================================
+
 # COMPARISON DISPLAY Table
-# ============================================================
+
 print("\n" + "=" * 50)
 print("COMPARISON")
 print("=" * 50)
@@ -118,9 +116,9 @@ print(f"{'Metric':<10} {'From Scratch':>15} {'Sklearn':>15}")
 print("-" * 40)
 print(f"{'R²':<10} {test_r2:>15.4f} {sk_r2:>15.4f}")
 print(f"{'MSE':<10} {test_mse:>15.2f} {sk_mse:>15.2f}")
-# ============================================================
+
 # STEP 5: FEATURE EXPERIMENTS
-# ============================================================
+
 print("\n" + "=" * 50)
 print("FEATURE EXPERIMENTS")
 print("=" * 50)
@@ -171,9 +169,9 @@ for name, r2 in results.items():
     print(f"{name:<25} {r2:>10.4f}")
 
 
-# ============================================================
+
 # STEP 6: VISUALIZATIONS
-# ============================================================
+
 fig, axes = plt.subplots(2, 3, figsize=(18, 10))
 fig.suptitle("Calorie Burn Predictor — Results", fontsize=16, fontweight="bold")
 
